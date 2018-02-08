@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class GumBall : MonoBehaviour {
 
-	public float maxSpeed = 30;
-
-	public float startspeed = 1;
-
-	private float speed;
+	public float speed = 1;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,29 +14,10 @@ public class GumBall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		transform.position += transform.right * Time.deltaTime * startspeed;
+		transform.position += transform.right * Time.deltaTime * speed;
 
 		if (Input.GetKey (KeyCode.Space)) {
-
-			if (speed < maxSpeed) {
-				
-				speed++;
-
-			} 
-
-			else {
-				
-				speed = maxSpeed;
-			}
-
-				
-		if (speed > 0) {
-
-			speed--;
+			speed++;
 		}
-
-		transform.position += transform.right * Time.deltaTime * speed;
 	}
-	
-}
 }
